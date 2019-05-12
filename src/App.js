@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
 import AddMovement from './Components/AddMovement';
 import MovementList from './Components/MovementList';
 import MenuBar from './Components/MenuBar';
 import WorkoutList from './Components/WorkoutList';
 import AddWorkout from './Components/AddWorkout';
 import './App.css';
-
-
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class App extends Component {
 
       ],
 
-      selectedMenuItem: 'addworkout',
+      selectedMenuItem: 'list',
 
     }
     this.onMenuItemChange = this.onMenuItemChange.bind(this);
@@ -60,16 +59,18 @@ class App extends Component {
   }
 
   render() {
-
     let returnels = [];
-    returnels.push(this.getMenu());
+    returnels.push(this.getMenu());    
     switch (this.state.selectedMenuItem) {
       case 'list':
+        
         returnels.push(
+          <Grid item xs={8}>>
           <div key="ListDiv" className="App">
             <MovementList movements={this.state.movements}></MovementList>
             <br />
           </div>
+          </Grid>
         );
         break;
       case 'add':

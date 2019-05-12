@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import Chip from '@material-ui/core/Chip';
+
+
+  
 
 export default class MovementList extends Component {
     constructor(props) {
@@ -9,7 +13,9 @@ export default class MovementList extends Component {
         this.state = {
             movements: this.props.movements,
         }
+        
     }
+    
     render() {
         let cards = [];
         for (var x in this.props.movements) {
@@ -30,11 +36,11 @@ function MovementCard (props) {
         return (
             <Card>
                 <CardContent>
-                    <Typography>
+                    <Typography component="p">
                         {props.value}
                     </Typography>
                     <Typography color="textSecondary" gutterBottom>
-                        {props.movement_type}
+                    <Chip label={props.movement_type} color="primary"></Chip>
                     </Typography>
 
                 </CardContent>
