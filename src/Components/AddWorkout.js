@@ -65,6 +65,5 @@ function MovementSelect(params) {
     )
 }
 
-
 export default AddWorkout;
 

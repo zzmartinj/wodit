@@ -22,9 +22,9 @@ export default class MovementList extends Component {
             cards.push(<MovementCard key={this.props.movements[x]['name'] + x} value={this.props.movements[x]['name']} movement_type={this.props.movements[x]['type']}></MovementCard>)
         }
         return (
-            <div >
+            <div>
                 <h2 className="App-header">WODiT Movement List</h2>
-                <br />
+                <br/>
                 {cards}
             </div>
         );

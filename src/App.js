@@ -63,12 +63,12 @@ class App extends Component {
     returnels.push(this.getMenu());    
     switch (this.state.selectedMenuItem) {
       case 'list':
-        
+      
         returnels.push(
-          <Grid item xs={8}>>
+          <Grid item xs={8}>
           <div key="ListDiv" className="App">
             <MovementList movements={this.state.movements}></MovementList>
-            <br />
+            <br/>
           </div>
           </Grid>
         );
